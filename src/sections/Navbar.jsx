@@ -61,8 +61,11 @@ const Navbar = () => {
                         <li>
                             <a>Rooms</a>
                             <ul className="p-2">
-                                <li><a href="#double" onClick={(e) => handleScrollToSection(e, '#double', 1000)}>Double Bed</a></li>
-                                <li><a href="#single" onClick={(e) => handleScrollToSection(e, '#single', 1000)}>Single Bed</a></li>
+                                <li><a href="#single" onClick={(e) => handleScrollToSection(e, '#single', 1000)}>Single</a></li>
+                                <li><a href="#double" onClick={(e) => handleScrollToSection(e, '#double', 1000)}>Double</a></li>
+                                <li><a href="#twin" onClick={(e) => handleScrollToSection(e, '#twin', 1000)}>Twin</a></li>
+                                <li><a href="#family" onClick={(e) => handleScrollToSection(e, '#family', 1000)}>Family</a></li>
+                                <li><a href="#suite" onClick={(e) => handleScrollToSection(e, '#suite', 1000)}>Suite</a></li>
                             </ul>
                         </li>
                         <li><a href="#contact" onClick={(e) => handleScrollToSection(e, '#contact', 1000)}>Contact Us</a></li>
@@ -73,12 +76,15 @@ const Navbar = () => {
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
                     <li><a href="#hero" onClick={(e) => handleScrollToSection(e, '#hero', 1000)}>Home</a></li>
-                    <li>
+                    <li className='dropdown'>
                         <details>
                             <summary>Rooms</summary>
-                            <ul className="">
-                                <li><a href="#double" className="text-xs" onClick={(e) => handleScrollToSection(e, '#double', 1000)}>Double Bed</a></li>
-                                <li><a href="#single" className="text-xs" onClick={(e) => handleScrollToSection(e, '#single', 1000)}>Single Bed</a></li>
+                            <ul className=" dropdown-content">
+                                <li><a href="#single" onClick={(e) => handleScrollToSection(e, '#single', 1000)}>Single</a></li>
+                                <li><a href="#double" onClick={(e) => handleScrollToSection(e, '#double', 1000)}>Double</a></li>
+                                <li><a href="#twin" onClick={(e) => handleScrollToSection(e, '#twin', 1000)}>Twin</a></li>
+                                <li><a href="#family" onClick={(e) => handleScrollToSection(e, '#family', 1000)}>Family</a></li>
+                                <li><a href="#suite" onClick={(e) => handleScrollToSection(e, '#suite', 1000)}>Suite</a></li>
                             </ul>
                         </details>
                     </li>

@@ -1,12 +1,19 @@
 import React from 'react'
-import RoomCard from '../components/RoomCard'
 import BookedRoom from '../components/BookedRoom'
+import SingleRooms from '../components/SingleRooms'
+import DoubleRooms from '../components/DoubleRooms'
 
 const Rooms = () => {
     return (
-        <div>
-            <RoomCard />
-            <BookedRoom />
+        <div id='rooms'>
+            <div className="divider">Single Bed Rooms</div>
+            <div className="">
+                <SingleRooms />
+            </div>
+            <div className="divider">Double Bed Rooms</div>
+            <div className="">
+                <DoubleRooms />
+            </div>
         </div>
     )
 }

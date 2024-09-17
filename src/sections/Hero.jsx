@@ -2,10 +2,10 @@ import React from 'react'
 
 const Hero = () => {
     return (
-        <div
+        <div id='hero'
             className="hero min-h-screen"
             style={{
-                backgroundImage: "url(https://img.daisyui.com/images/stock/photo-1507358522600-9f71e620c44e.webp)",
+                backgroundImage: "url(/bg.jpg)",
             }}>
             <div className="hero-overlay bg-opacity-60"></div>
             <div className="hero-content text-neutral-content text-center">

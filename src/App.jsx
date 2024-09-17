@@ -6,11 +6,17 @@ import Rooms from './sections/Rooms'
 
 const App = () => {
   return (
-    <div>
-      <Navbar />
+    <div className=' relative'>
+      <div className=" fixed top-0 w-full z-50">
+        <Navbar />
+      </div>
       <Hero />
+      <div className=" px-5 py-10">
       <Rooms />
-      <Footer />
+      </div>
+      <div className="">
+        <Footer />
+      </div>
     </div>
   )
 }

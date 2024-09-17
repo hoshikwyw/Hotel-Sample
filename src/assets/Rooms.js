@@ -138,5 +138,93 @@ export const singleRooms = [
         RoomType: "Double",
         RoomPrice: 380,
         RoomFancity: ["Standard", "Superior", "Pool View"]
+    },
+    // Additional Twin Rooms
+    {
+        id: 21,
+        RoomNo: "021",
+        RoomType: "Twin",
+        RoomPrice: 260,
+        RoomFancity: ["Superior", "Poolside View"]
+    },
+    {
+        id: 22,
+        RoomNo: "022",
+        RoomType: "Twin",
+        RoomPrice: 270,
+        RoomFancity: ["Deluxe", "Mountain View"]
+    },
+    {
+        id: 23,
+        RoomNo: "023",
+        RoomType: "Twin",
+        RoomPrice: 280,
+        RoomFancity: ["Deluxe", "City View"]
+    },
+    // Additional Family Rooms
+    {
+        id: 24,
+        RoomNo: "024",
+        RoomType: "Family",
+        RoomPrice: 450,
+        RoomFancity: ["Luxury Family Suite", "Sea View"]
+    },
+    {
+        id: 25,
+        RoomNo: "025",
+        RoomType: "Family",
+        RoomPrice: 430,
+        RoomFancity: ["Family Deluxe", "Mountain View"]
+    },
+    {
+        id: 26,
+        RoomNo: "026",
+        RoomType: "Family",
+        RoomPrice: 470,
+        RoomFancity: ["Family Suite", "Garden View"]
+    },
+    // Additional Single Rooms
+    {
+        id: 27,
+        RoomNo: "027",
+        RoomType: "Single",
+        RoomPrice: 190,
+        RoomFancity: ["Standard", "Budget", "City View"]
+    },
+    {
+        id: 28,
+        RoomNo: "028",
+        RoomType: "Single",
+        RoomPrice: 210,
+        RoomFancity: ["Deluxe", "Superior"]
+    },
+    {
+        id: 29,
+        RoomNo: "029",
+        RoomType: "Single",
+        RoomPrice: 220,
+        RoomFancity: ["Deluxe", "Sea View"]
+    },
+    // Additional Suite Rooms
+    {
+        id: 30,
+        RoomNo: "030",
+        RoomType: "Suite",
+        RoomPrice: 600,
+        RoomFancity: ["Presidential", "Luxury", "Ocean View"]
+    },
+    {
+        id: 31,
+        RoomNo: "031",
+        RoomType: "Suite",
+        RoomPrice: 620,
+        RoomFancity: ["Luxury", "Penthouse Suite"]
+    },
+    {
+        id: 32,
+        RoomNo: "032",
+        RoomType: "Suite",
+        RoomPrice: 650,
+        RoomFancity: ["Honeymoon Suite", "Garden View"]
     }
-]
+];

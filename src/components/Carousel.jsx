@@ -1,6 +1,8 @@
 import React from 'react'
 
-const Carousel = () => {
+const Carousel = ({data}) => {
+    console.log(data?.roomImgs);
+    
     return (
         <div className="carousel w-full">
             <div id="slide1" className="carousel-item relative w-full">

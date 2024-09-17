@@ -10,23 +10,23 @@ const Rooms = () => {
     return (
         <div id='rooms'>
             <div className="divider">Single Rooms</div>
-            <div className="">
+            <div className=" my-10">
                 <SingleRooms />
             </div>
             <div className="divider">Double Rooms</div>
-            <div className="">
+            <div className=" my-10">
                 <DoubleRooms />
             </div>
             <div className="divider">Twin Rooms</div>
-            <div className="">
+            <div className=" my-10">
                 <TwinRooms />
             </div>
             <div className="divider">Family Rooms</div>
-            <div className="">
+            <div className=" my-10">
                 <FamilyRooms />
             </div>
             <div className="divider">Suite Rooms</div>
-            <div className="">
+            <div className=" my-10">
                 <SuiteRooms />
             </div>
         </div>

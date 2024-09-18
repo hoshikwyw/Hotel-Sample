@@ -4,9 +4,12 @@ import RoomModal from './RoomModal';
 const RoomCard = ({ roomData }) => {
     const [selectedRoomId, setSelectedRoomId] = useState(null); // State to store selected room id
     const roomImg = roomData?.roomImgs[0];
+    console.log(selectedRoomId);
+
 
     const handleMoreInfoClick = () => {
-        setSelectedRoomId(roomData?.id); // Set the room id when "More Info" is clicked
+        setSelectedRoomId(roomData?.id);
+
         document.getElementById('my_modal_4').showModal(); // Show modal
     };
 

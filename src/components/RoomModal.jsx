@@ -11,7 +11,7 @@ const RoomModal = ({ roomId }) => {
             const roomDetails = rooms.find((room) => room.id === roomId);
             setData(roomDetails)
         }
-    }, [roomId]);
+    }, []);
 
     return (
         <dialog id="my_modal_4" className="modal overflow-y-auto py-10">

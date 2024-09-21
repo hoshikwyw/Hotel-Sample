@@ -9,7 +9,7 @@ const Carousel = ({ data }) => {
         <div className="carousel w-full">
             {roomPhotos?.map((img, index) => (
                 <div key={index} id={`slide${index + 1}`} className="carousel-item relative w-full">
-                    <img src={img} className=" skeleton w-full h-96" alt={`Slide ${index + 1}`} />
+                    <img src={img} className=" skeleton w-full h-80" alt={`Slide ${index + 1}`} />
                     <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
                         {/* Previous button */}
                         <a

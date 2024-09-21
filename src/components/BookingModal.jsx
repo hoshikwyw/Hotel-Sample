@@ -1,10 +1,8 @@
-import React, { useState } from 'react'
+import React from 'react'
 
 const BookingModal = () => {
-    const [data, setData] = useState(null);
-    const [bookingModalOpen, setBookingModalOpen] = useState(false)
   return (
-    <div></div>
+    <div>BookingModal</div>
   )
 }
 

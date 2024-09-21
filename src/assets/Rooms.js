@@ -101,7 +101,7 @@ export const rooms = [
     RoomNo: "013",
     RoomType: "Double",
     RoomPrice: 350,
-    RoomFancity: ["Deluxe", "Superior", "Romantic"],
+    RoomFancity: ["Deluxe", "Superior", "Romantic", "Standard", "Budget"],
   },
   {
     id: 14,

@@ -16,7 +16,7 @@ const RoomCard = ({ roomData }) => {
     };
 
     // This function will handle the booking and receive the data from RoomModal
-    const handleBooking = (roomDetails, checkOutDate) => {
+    const handleBooking = (roomDetails, checkOutDate,checkInDate) => {
         console.log("Room is booked:", roomDetails);
         console.log("Check-out Date:", checkOutDate);
 

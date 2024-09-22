@@ -13,7 +13,7 @@ const RoomModal = ({ data, isModalOpen, setIsModalOpen, onBook }) => {
     const [endDay, setEndDay] = useState('-------');
     const [totalDays, setTotalDays] = useState(1);
     const [totalPrice, setTotalPrice] = useState(0);
-    const [bookingModalOpen, setBookingModalOpen] = useState(true)
+    const [bookingModalOpen, setBookingModalOpen] = useState(false)
 
     useEffect(() => {
         const oneDayPrice = data?.RoomPrice
@@ -64,14 +64,12 @@ const RoomModal = ({ data, isModalOpen, setIsModalOpen, onBook }) => {
     // Function to handle booking
     const handleBooking = () => {
         if (onBook) {
-            onBook(data, endDate); // Pass the room data and the check-out date to the parent component
+            onBook(data, endDate,startDate); // Pass the room data and the check-out date to the parent component
         }
+        setBookingModalOpen(true)
         setIsModalOpen(false); // Close the modal after booking
     };
 
-    const handleBookingOpenModal = () => { }
-
-    const handleBookingCloseModal = () => { }
 
     return (
         <>
@@ -137,7 +135,7 @@ const RoomModal = ({ data, isModalOpen, setIsModalOpen, onBook }) => {
                     </div>
                 </dialog>
             )}
-            <BookingModal onBook={handleBooking} />
+            <BookingModal onBook={handleBooking} data={data} totalDays={totalDays} totalPrice={totalPrice} bookingModalOpen={bookingModalOpen} setBookingModalOpen={setBookingModalOpen} startDate={startDate} endDate={endDate} startDay={startDay} endDay={endDay} />
         </>
     );
 };

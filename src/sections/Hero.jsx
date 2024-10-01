@@ -5,17 +5,19 @@ const Hero = () => {
         <div id='hero'
             className="hero min-h-screen"
             style={{
-                backgroundImage: "url(/bg.jpg)",
+                backgroundImage: "url(/hero.jpg)",
             }}>
             <div className="hero-overlay bg-opacity-60"></div>
             <div className="hero-content text-neutral-content text-center">
                 <div className="max-w-md">
-                    <h1 className="mb-5 text-5xl font-bold">Hello there</h1>
-                    <p className="mb-5">
-                        Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem
-                        quasi. In deleniti eaque aut repudiandae et a id nisi.
+                    <h1 className=" mb-5 text-5xl font-semibold text-white">Bueng Aram Golf & Country Club</h1>
+                    <p className="mb-2">
+                    (Daeho CC., Kalasin, Thailand.) 
                     </p>
-                    <button className="btn btn-primary">Get Started</button>
+                    <p className="mb-5">
+                    010 9295 8868
+                    </p>
+                    <button className="btn btn-primary">Make Booking</button>
                 </div>
             </div>
         </div>

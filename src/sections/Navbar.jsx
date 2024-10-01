@@ -48,53 +48,58 @@ const Navbar = () => {
     }
 
     return (
-        <div className={`navbar fixed w-full top-0 left-0 z-10 transition-colors duration-300 ease-in-out ${scrollPosition > 0 ? 'bg-base-300' : 'bg-transparent'}`}>
-            <div className="navbar-start">
-                <div className="dropdown">
-                    <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" />
-                        </svg>
-                    </div>
-                    <ul tabIndex={0} className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
-                        <li><a href="#hero" onClick={(e) => handleScrollToSection(e, '#hero', 1000)}>Home</a></li>
-                        <li>
-                            <a>Rooms</a>
-                            <ul className="p-2">
-                                <li><a href="#single" onClick={(e) => handleScrollToSection(e, '#single', 1000)}>Single</a></li>
-                                <li><a href="#double" onClick={(e) => handleScrollToSection(e, '#double', 1000)}>Double</a></li>
-                                <li><a href="#twin" onClick={(e) => handleScrollToSection(e, '#twin', 1000)}>Twin</a></li>
-                                <li><a href="#family" onClick={(e) => handleScrollToSection(e, '#family', 1000)}>Family</a></li>
-                                <li><a href="#suite" onClick={(e) => handleScrollToSection(e, '#suite', 1000)}>Suite</a></li>
+        <>
+            <div className="drawer">
+                <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
+                <div className="drawer-content flex flex-col">
+                    {/* Navbar */}
+                    <div className="navbar bg-base-300 w-full">
+                        <div className="flex-none lg:hidden">
+                            <label htmlFor="my-drawer-3" aria-label="open sidebar" className="btn btn-square btn-ghost">
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    className="inline-block h-6 w-6 stroke-current">
+                                    <path
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                        strokeWidth="2"
+                                        d="M4 6h16M4 12h16M4 18h16"></path>
+                                </svg>
+                            </label>
+                        </div>
+                        <div className="mx-2 flex-1 px-2">Resort's Name</div>
+                        <div className="hidden flex-none lg:block">
+                            <ul className="menu menu-horizontal">
+                                {/* Navbar menu content here */}
+                                <li><a>Promotions</a></li>
+                                <li><a>Golf Course Information</a></li>
+                                <li><a>Our Resorts and Residences</a></li>
+                                <li><a>Rules & Regulations for Customers</a></li>
+                                <li><a>Members’ Area </a></li>
+                                <li className="hidden xl:block"><a>Pricing Policy</a></li>
+                                <li className="hidden xl:block"><a>Forum for all customers</a></li>
                             </ul>
-                        </li>
-                        <li><a href="#contact" onClick={(e) => handleScrollToSection(e, '#contact', 1000)}>Contact Us</a></li>
+                        </div>
+                    </div>
+                   
+                </div>
+                <div className="drawer-side">
+                    <label htmlFor="my-drawer-3" aria-label="close sidebar" className="drawer-overlay"></label>
+                    <ul className="menu bg-base-200 min-h-full w-80 p-4">
+                        {/* Sidebar content here */}
+                        <li><a>Promotions</a></li>
+                        <li><a>Pricing Policy</a></li>
+                        <li><a>Golf Course Information</a></li>
+                        <li><a>Our Resorts and Residences</a></li>
+                        <li><a>Rules & Regulations for Customers</a></li>
+                        <li><a>Members’ Area </a></li>
+                        <li><a>Forum for all customers</a></li>
                     </ul>
                 </div>
-                <a href="#hero" onClick={(e) => handleScrollToSection(e, '#hero', 1000)} className="btn btn-ghost text-xl">LiMAK</a>
             </div>
-            <div className="navbar-center hidden lg:flex">
-                <ul className="menu menu-horizontal px-1">
-                    <li><a href="#hero" onClick={(e) => handleScrollToSection(e, '#hero', 1000)}>Home</a></li>
-                    <li className='dropdown'>
-                        <details>
-                            <summary>Rooms</summary>
-                            <ul className=" dropdown-content">
-                                <li><a href="#single" onClick={(e) => handleScrollToSection(e, '#single', 1000)}>Single</a></li>
-                                <li><a href="#double" onClick={(e) => handleScrollToSection(e, '#double', 1000)}>Double</a></li>
-                                <li><a href="#twin" onClick={(e) => handleScrollToSection(e, '#twin', 1000)}>Twin</a></li>
-                                <li><a href="#family" onClick={(e) => handleScrollToSection(e, '#family', 1000)}>Family</a></li>
-                                <li><a href="#suite" onClick={(e) => handleScrollToSection(e, '#suite', 1000)}>Suite</a></li>
-                            </ul>
-                        </details>
-                    </li>
-                    <li><a href="#contact" onClick={(e) => handleScrollToSection(e, '#contact', 1000)}>Contact</a></li>
-                </ul>
-            </div>
-            <div className="navbar-end">
-                <a className="btn">Booking</a>
-            </div>
-        </div>
+        </>
     )
 }
 

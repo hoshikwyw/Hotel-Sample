@@ -6,6 +6,7 @@ import Promotions from './sections/Promotions'
 import GolfCourse from './components/GolfCourse'
 import RoomCard from './components/RoomCard'
 import Forum from './components/Forum'
+import ChatModal from './sections/ChatModal'
 // import Rooms from './sections/Rooms'
 
 const App = () => {
@@ -41,6 +42,7 @@ const App = () => {
         <div className=" divider divider-start w-full text-5xl underline text-primary pb-5">Forum for all Customers</div>
         <Forum />
       </div>
+      <ChatModal />
       <div className="">
         <Footer />
       </div>

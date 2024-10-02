@@ -3,25 +3,17 @@ import React from 'react'
 const Footer = () => {
     return (
         <footer className="footer bg-base-200 text-base-content p-10">
+            <div>
+                <h6 className="footer-title">Bueng Aram Golf & Country Club</h6>
+                <a className='link link-hover' href="#">(Daeho CC., Kalasin, Thailand.)</a>
+                <a className='link link-hover' href="#">010 9295 8868</a>
+            </div>
             <nav>
-                <h6 className="footer-title">Services</h6>
-                <a className="link link-hover">Branding</a>
-                <a className="link link-hover">Design</a>
-                <a className="link link-hover">Marketing</a>
-                <a className="link link-hover">Advertisement</a>
-            </nav>
-            <nav>
-                <h6 className="footer-title">Company</h6>
-                <a className="link link-hover">About us</a>
-                <a className="link link-hover">Contact</a>
-                <a className="link link-hover">Jobs</a>
-                <a className="link link-hover">Press kit</a>
-            </nav>
-            <nav>
-                <h6 className="footer-title">Legal</h6>
-                <a className="link link-hover">Terms of use</a>
-                <a className="link link-hover">Privacy policy</a>
-                <a className="link link-hover">Cookie policy</a>
+                <a className="link link-hover">Promotions</a>
+                <a className="link link-hover">Golf Course Information</a>
+                <a className="link link-hover">Our Resorts and Residences</a>
+                <a className="link link-hover">Member's Area</a>
+                <a className="link link-hover">Rules & Regulations for Customers </a>
             </nav>
             <form>
                 <h6 className="footer-title">Newsletter</h6>

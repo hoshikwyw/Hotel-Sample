@@ -73,29 +73,29 @@ const Navbar = () => {
                         <div className="hidden flex-none lg:block">
                             <ul className="menu menu-horizontal">
                                 {/* Navbar menu content here */}
-                                <li><a>Promotions</a></li>
-                                <li><a>Golf Course Information</a></li>
-                                <li><a>Our Resorts and Residences</a></li>
-                                <li><a>Rules & Regulations for Customers</a></li>
+                                <li><a href='#promotions'>Promotions</a></li>
+                                <li><a href='#golf'>Golf Course Information</a></li>
+                                <li><a href='#resorts'>Our Resorts and Residences</a></li>
                                 <li><a>Members’ Area </a></li>
+                                <li ><a href='#forum'>Forum for all customers</a></li>
                                 <li className="hidden xl:block"><a>Pricing Policy</a></li>
-                                <li className="hidden xl:block"><a>Forum for all customers</a></li>
+                                <li className="hidden xl:block"><a>Rules & Regulations for Customers</a></li>
                             </ul>
                         </div>
                     </div>
-                   
+
                 </div>
                 <div className="drawer-side">
                     <label htmlFor="my-drawer-3" aria-label="close sidebar" className="drawer-overlay"></label>
                     <ul className="menu bg-base-200 min-h-full w-80 p-4">
                         {/* Sidebar content here */}
-                        <li><a>Promotions</a></li>
+                        <li><a href='#promotions'>Promotions</a></li>
                         <li><a>Pricing Policy</a></li>
-                        <li><a>Golf Course Information</a></li>
-                        <li><a>Our Resorts and Residences</a></li>
+                        <li><a href='#golf'>Golf Course Information</a></li>
+                        <li><a href='#resorts'>Our Resorts and Residences</a></li>
                         <li><a>Rules & Regulations for Customers</a></li>
                         <li><a>Members’ Area </a></li>
-                        <li><a>Forum for all customers</a></li>
+                        <li><a href='#forum'>Forum for all customers</a></li>
                     </ul>
                 </div>
             </div>

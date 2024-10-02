@@ -1,13 +1,17 @@
-import React, { useEffect, useState } from 'react'
+import React, { useCallback, useEffect, useRef, useState } from 'react'
 import { HiUser, HiPhone, HiUserGroup } from "react-icons/hi";
 import { FaPlaneArrival, FaPlaneDeparture, FaRegNewspaper, FaCalendarDay } from "react-icons/fa6";
+import { toPng } from 'html-to-image';
 
 
 const ReservationForm = ({ data }) => {
+    const imgRef = useRef(null);
     const [months, setMonths] = useState([]);
     const [seasonName, setSeasonName] = useState("");
     const [seasonPrice, setSeasonPrice] = useState(0);
     const [tabIndex, setTabIndex] = useState(0); // Track the active collapse
+    const [modalData, setModalData] = useState(null);
+    // console.log("Modal data:", modalData);
 
     const [formData, setFormData] = useState({
         name: "",
@@ -41,13 +45,46 @@ const ReservationForm = ({ data }) => {
     };
 
     const handleClickSend = () => {
-        // // Save form data in localStorage
-        // localStorage.setItem("reservationFormData", JSON.stringify(formData));
-
-        // // Close the current tab (tabIndex 0) and open the next one (tabIndex 1)
+        localStorage.setItem("reservationFormData", JSON.stringify(formData));
         setTabIndex(1);
-        console.log("Form data stored in localStorage and tab switched.");
     };
+
+    const handlePaymentMethod = () => {
+        localStorage.setItem("reservationFormData", JSON.stringify(formData));
+        const modal = document.getElementById('my_modal_4');
+        const modal2 = document.getElementById('my_modal_3');
+        if (modal) {
+            modal.close();
+        }
+        if (modal2) {
+            modal2.showModal();
+            const storedData = localStorage.getItem("reservationFormData");
+            if (storedData) {
+                setModalData(JSON.parse(storedData));
+
+            }
+
+        }
+
+        console.log('Payment method chosen, form data stored, and modal closed.');
+    };
+
+    const onDownloadButtonClick = useCallback(() => {
+        if (imgRef.current === null) {
+            return
+        }
+        toPng(imgRef.current, { cacheBust: true })
+            .then((dataUrl) => {
+                const link = document.createElement("a")
+                link.download = 'golf-invoice.png'
+                link.href = dataUrl
+                link.click()
+            })
+            .catch((err) => {
+                console.log(err);
+
+            })
+    }, [imgRef])
 
     return (
         <>
@@ -190,34 +227,43 @@ const ReservationForm = ({ data }) => {
                                 <div className="collapse-content">
                                     <div role="tablist" className="tabs tabs-bordered w-full">
                                         <input type="radio" name="my_tabs_1" role="tab" className="tab text-sm text-nowrap" aria-label="Payment 1" />
-                                        <div role="tabpanel" className="tab-content p-10">Deposit 200,000 Won./Person each to the following Bank Account. And pay
-                                            the rest 80% in cash at the golf course.
-                                            <button className=' btn btn-primary btn-outline'>Pay with this method</button>
-                                         </div>
-                                        <input
-                                            type="radio"
-                                            name="my_tabs_1"
-                                            role="tab"
-                                            className="tab text-sm text-nowrap"
-                                            aria-label="Payment 2"
-                                            defaultChecked />
-                                        <div role="tabpanel" className="tab-content p-10">Deposit 100% Tour Fee in advance to the following Bank Account. And get
-                                            the special discounts as announced in the seasonal promotion section. 
-                                            <button className=' btn btn-primary btn-outline'>Pay with this method</button>
-                                            </div>
+                                        <div role="tabpanel" className="tab-content p-10">
+                                            <p>
+                                                Deposit 200,000 Won./Person each to the following Bank Account. And pay
+                                                the rest 80% in cash at the golf course.
+                                            </p>
+                                            <button className=' btn btn-primary btn-outline' onClick={handlePaymentMethod}>Pay with this method</button>
+                                        </div>
+                                        <input type="radio" name="my_tabs_1" role="tab" className="tab text-sm text-nowrap" aria-label="Payment2" defaultChecked />
+                                        <div role="tabpanel" className="tab-content p-10">
+                                            <p>
+                                                Deposit 100% Tour Fee in advance to the following Bank Account. And get
+                                                the special discounts as announced in the seasonal promotion section.
+                                            </p>
+                                            <button className=' btn btn-primary btn-outline' onClick={handlePaymentMethod}>Pay with this method</button>
+                                        </div>
                                         <input type="radio" name="my_tabs_1" role="tab" className="tab text-sm text-nowrap" aria-label="Payment 3" />
-                                        <div role="tabpanel" className="tab-content p-10">Will pat in full at the golf course by Card. (EDC Machine is available for
-                                            payments by cards ad the golf course).
-                                            <button className=' btn btn-primary btn-outline'>Pay with this method</button>
-                                            </div>
+                                        <div role="tabpanel" className="tab-content p-10">
+                                            <p>
+                                                Will pat in full at the golf course by Card. (EDC Machine is available for
+                                                payments by cards ad the golf course).
+                                            </p>
+                                            <button className=' btn btn-primary btn-outline' onClick={handlePaymentMethod}>Pay with this method</button>
+                                        </div>
                                         <input type="radio" name="my_tabs_1" role="tab" className="tab text-sm text-nowrap" aria-label="Payment 4" />
-                                        <div role="tabpanel" className="tab-content p-10">I am a member and I will pay according to the members’ payment methods at
-                                            the golf course. 
-                                            <button className=' btn btn-primary btn-outline'>Pay with this method</button>
-                                            </div>
+                                        <div role="tabpanel" className="tab-content p-10">
+                                            <p>
+                                                I am a member and I will pay according to the members’ payment methods at
+                                                the golf course.
+                                            </p>
+                                            <button className=' btn btn-primary btn-outline' onClick={handlePaymentMethod}>Pay with this method</button>
+                                        </div>
                                         <input type="radio" name="my_tabs_1" role="tab" className="tab text-sm text-nowrap" aria-label="Payment 5" />
-                                        <div role="tabpanel" className="tab-content p-10">Request your payment link at 010 9295 8868
-                                        <button className=' btn btn-primary btn-outline'>Pay with this method</button>
+                                        <div role="tabpanel" className="tab-content p-10">
+                                            <p>
+                                                Request your payment link at 010 9295 8868
+                                            </p>
+                                            <button className=' btn btn-primary btn-outline' onClick={handlePaymentMethod}>Pay with this method</button>
                                         </div>
                                     </div>
                                 </div>
@@ -250,9 +296,38 @@ const ReservationForm = ({ data }) => {
                             </div>
                         </div>
                     </div>
+                    <div className="modal-action">
+                        <form method="dialog">
+                            {/* if there is a button in form, it will close the modal */}
+                            <button className="btn">Close</button>
+                        </form>
+                    </div>
                 </div>
                 <label className="modal-backdrop bg-black/40 backdrop-blur" htmlFor="my_modal_4"></label>
+
             </dialog>
+            <dialog id="my_modal_3" className="modal">
+                <div className="modal-box">
+                    <form method="dialog">
+                        <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+                    </form>
+                    <div ref={imgRef} className=' bg-white padding-5'>
+                        <h3 className="font-bold text-lg text-success">Your Reservation is Success !!</h3>
+                        <p className="py-4">Your Name : {modalData?.name}</p>
+                        <p className="py-4">Your Phone Number : {modalData?.phone}</p>
+                        <p className="py-4">Member of your team : {modalData?.numberOfCustomers}</p>
+                        <p className="py-4">Your Arrival Date : {modalData?.arrivalDate}</p>
+                        <p className="py-4">Your Departure Date : {modalData?.departureDate}</p>
+                        <p className="py-4">Your Deposit Amount : {modalData?.deposit}</p>
+                        <p className="py-4">Your Duration : {modalData?.duration}</p>
+                        <p className="py-4">Your Additional Note : {modalData?.additionalInfo}</p>
+                        <p className="py-4">Your Plan : {seasonName} Season</p>
+                    </div>
+                    <button className=' btn btn-primary' onClick={onDownloadButtonClick}>Download this invoice</button>
+                </div>
+                <label className="modal-backdrop bg-black/30 backdrop-blur" htmlFor="my_modal_3"></label>
+            </dialog>
+
         </>
     );
 }

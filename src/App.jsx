@@ -12,12 +12,11 @@ const App = () => {
         <Navbar />
       </div>
       <Hero />
-      <div className=" px-5 py-10">
-        <div className=" w-full text-center text-5xl underline text-primary pb-5">Promotions</div>
+      <div className=" w-[90%] mx-auto py-10">
+        <div className=" divider divider-start w-full text-5xl underline text-primary pb-5">Promotions</div>
         <Promotions />
       </div>
       <div className=" px-5 py-10">
-        <div className=" w-full text-center text-5xl underline text-primary pb-5">Make Your Reservations</div>
       </div>
       <div className="">
         <Footer />

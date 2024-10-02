@@ -52,11 +52,11 @@ const Promotions = () => {
         <div className='flex flex-col items-center justify-center w-full'>
 
 
-            <div role="tablist" className="tabs tabs-boxed w-[90%] tabs-lg bg-transparent">
+            <div role="tablist" className="tabs tabs-boxed w-full tabs-lg bg-transparent">
 
-                <input type="radio" name="my_tabs_2" role="tab" className="tab w-full text-nowrap border border-b-0 border-base-300 roounded-t-box" aria-label="Determination of 3 seasons" />
+                <input type="radio" name="my_tabs_2" role="tab" className="tab w-full text-nowrap border border-b-0 border-base-300 roounded-t-box" aria-label="Current Seasons" />
                 <div role="tabpanel" className="tab-content bg-base-100 border-base-300 rounded-b-box p-6">
-                    <div className="flex w-full justify-center items-center gap-8 flex-wrap">
+                    <div className="flex w-full justify-start items-center gap-8 flex-wrap">
                         {lowSeasons.length > 0 && <PromotionCard data={lowSeasons} status={lowSeasonStatus} />}
                         {mediumSeasons.length > 0 && <PromotionCard data={mediumSeasons} status={mediumSeasonStatus} />}
                         {highSeasons.length > 0 && <PromotionCard data={highSeasons} status={highSeasonStatus} />}
@@ -67,22 +67,22 @@ const Promotions = () => {
                     name="my_tabs_2"
                     role="tab"
                     className="tab w-full text-nowrap border border-b-0 border-base-300 roounded-t-box"
-                    aria-label="Seasonal Promotions"
+                    aria-label="Next Seasonal Promotions"
                     defaultChecked />
                 <div role="tabpanel" className="tab-content bg-base-100 border-base-300 rounded-b-box p-6">
-                    <p className='text-info py-5 text-2xl'>Make reservations for next season in advance and pay in full</p>
+                    <p className='text-info-content p-5 text-2xl'>Make reservations for next season in advance and pay in full</p>
                     <div className="flex w-full justify-center items-center gap-8 flex-wrap">
                         <SeasonalPlanCard data={lowSeasons} />
                         <SeasonalPlanCard data={lowSeasons} />
                         <SeasonalPlanCard data={lowSeasons} />
                     </div>
-                    <p className='text-info py-5 text-2xl'>Make reservations <span className='text-error text-3xl'>3 months</span> in advance and pay in full </p>
+                    <p className='text-info-content p-5 text-2xl'>Make reservations <span className='text-error text-3xl'>3 months</span> in advance and pay in full </p>
                     <div className="flex w-full justify-center items-center gap-8 flex-wrap">
                         <SeasonalPlanCard data={lowSeasons} />
                         <SeasonalPlanCard data={lowSeasons} />
                         <SeasonalPlanCard data={lowSeasons} />
                     </div>
-                    <p className='text-info py-5 text-2xl'>Make reservations <span className='text-error text-3xl'>2 months</span> in advance and pay in full </p>
+                    <p className='text-info-content p-5 text-2xl'>Make reservations <span className='text-error text-3xl'>2 months</span> in advance and pay in full </p>
                     <div className="flex w-full justify-center items-center gap-8 flex-wrap">
                         <SeasonalPlanCard data={lowSeasons} />
                         <SeasonalPlanCard data={lowSeasons} />
